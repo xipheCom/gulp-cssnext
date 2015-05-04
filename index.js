@@ -22,6 +22,7 @@ function transform(options) {
       try {
         options.from = options.from === undefined ? (file.path !== null ? file.path : undefined) : options.from
         transformed = cssnext(contents, options)
+        options.from = undefined
       }
       catch(err) {
         return cb(
